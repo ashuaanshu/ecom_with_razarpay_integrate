@@ -1,0 +1,103 @@
+[
+    {
+        "id": "1",
+        "title": "Samsung Galaxy M05 (Mint Green, 4GB RAM, 64 GB Storage) | 50MP Dual Camera | Bigger 6.7\"\" HD+ Display | 5000mAh Battery | 25W Fast Charging | 2 Gen OS Upgrade & 4 Year Security Update | Without Charger",
+        "brand": "Samsung",
+        "price": "6,249",
+        "rating": "4",
+        "description": "Captivating viewing experience on bigger 6.7\"\" Display with HD+ resolution (720*1600 Pixels) | 20:9 Aspect Ratio",
+        "category": "Mobile",
+        "image": ["C:/Users/Ashutosh/Downloads/img/mob1", "C:/Users/Ashutosh/Downloads/img/mob2", "C:/Users/Ashutosh/Downloads/img/mob3"]
+    },
+    {
+        "id": "2",
+        "title": "Apple Macbook Retina Display 12",
+        "brand": "Apple",
+        "price": "50,499",
+        "rating": "5",
+        "description": "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.",
+        "category": "Laptop",
+        "image": ["C:/Users/Ashutosh/Downloads/img/lap1", "C:/Users/Ashutosh/Downloads/img/lap2", "C:/Users/Ashutosh/Downloads/img/lap3", "C:/Users/Ashutosh/Downloads/img/lap4"]
+    },
+    {
+        "id": "3",
+        "title": "OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage) | Lifetime Display Warranty | 5500 mAh Battery, 80W SUPERVOOC and Reverse Charging | 50MP Camera with OIS | 120Hz AMOLED Display",
+        "brand": "OnePlus",
+        "price": "17,599",
+        "rating": "4.1",
+        "description": "5500 mAh Battery & Reverse Charging: Ditch the power bank and press play all day with Nord CE4 Lite’s gigantic 5,500 mAh battery. You’ll even have enough juice to charge up your buddy’s phone with reverse wired charging",
+        "category": "Mobile",
+        "image": ["C:/Users/Ashutosh/Downloads/img/mob11", "C:/Users/Ashutosh/Downloads/img/mob12", "C:/Users/Ashutosh/Downloads/img/mob13"]
+    },
+    {
+        "id": "4",
+        "title": "HP 15, 13th Gen Intel Core i5-1335U Laptop (16GB DDR4,512GB SSD) Anti-Glare, Micro-edge,15.6''/39.6cm, FHD, Win11,M365,Office24, Silver,1.59kg, Iris Xe Graphics, FHD Camera w/privacy shutter, fd0577TU",
+        "brand": "HP",
+        "price": "56,990",
+        "rating": "3.5",
+        "description": "Processor, Memory & Storage: Intel Core i5-1334U (up to 4.6 GHz with Intel Turbo Boost Technology, 12 MB L3 cache, 10 cores, 12 threads)| Memory: 16 GB DDR4-3200 MT/s (2x 8 GB)| Storage: 512 GB PCIe Gen4 NVMe M.2 SSD",
+        "category": "Laptop",
+        "image": ["C:/Users/Ashutosh/Downloads/img/lap11", "C:/Users/Ashutosh/Downloads/img/lap12", "C:/Users/Ashutosh/Downloads/img/lap13"]
+    },
+    {
+        "id": "5",
+        "title": "TAGDO Men's Regular Fit Casual Shirt (5171)",
+        "brand": "TAGDO",
+        "price": "499",
+        "rating": "4",
+        "description": "Discover the epitome of effortless style with the Tagdo Men's Casual Shirt, now available on Amazon. Crafted with meticulous attention to detail, this shirt embodies sophistication and comfort in equal measure. Our premium quality fabric ensures unparalleled comfort and durability, making it the perfect choice for any occasion. Whether you're heading out for a casual outing with friends or enjoying a relaxed day at the office, the Tagdo Men's Casual Shirt effortlessly elevates your look.",
+        "category": "Shirt",
+        "image": ["C:/Users/Ashutosh/Downloads/img/men1","C:/Users/Ashutosh/Downloads/img/men2","C:/Users/Ashutosh/Downloads/img/men3"]
+    },
+    {
+        "id": "6",
+        "title": "Noise Halo Plus 1.46\"\" Super AMOLED Display Elite Smart Watch, Bluetooth Calling, Stainless Steel Build, Always on Display, Upto 7 Days Battery (Elite Black)",
+        "brand": "Noise",
+        "price": "4,500",
+        "rating": "4.2",
+        "description": "1.46 inches (3.7cms) AMOLED display, 466*466px, Always on display - Yes - Enjoy clear and immersive visuals on its round AMOLED display.",
+        "category": "Watch",
+        "image": ["C:/Users/Ashutosh/Downloads/img/watch1","C:/Users/Ashutosh/Downloads/img/watch2", "C:/Users/Ashutosh/Downloads/img/watch3"]
+    },
+    {
+        "id": "7",
+        "title": "Symbol Premium Men's Cotton Stretch Jeans (Regular Fit)",
+        "brand": "Special",
+        "price": "1,499",
+        "rating": "3.7",
+        "description": "PREMIUM INDIGO FABRIC: Made from 98% cotton and 2% elastane for comfort stretch",
+        "category": "Jeans",
+        "image": ["C:/Users/Ashutosh/Downloads/img/jeans1", "C:/Users/Ashutosh/Downloads/img/jeans2", "C:/Users/Ashutosh/Downloads/img/jeans3"]
+    },
+    {
+        "id": "8",
+        "title": "JVX Jeans for Men || MenJeans || Reguler FitJeans for Men || StylishJeans || Jeans (NJJ-08)",
+        "brand": "JVX",
+        "price": "1,899",
+        "rating": "4",
+        "description": "Fit: These jeans for men are designed with a trendy jeans for man style, offering a relaxed and fashionable look, perfect for casual outings or laid-back weekends.",
+        "category": "Jeans",
+        "image": ["C:/Users/Ashutosh/Downloads/img/jeans11", "C:/Users/Ashutosh/Downloads/img/jeans12", "C:/Users/Ashutosh/Downloads/img/jeans13"]
+    },
+    {
+        "id": "9",
+        "title": "Nikon Z50 Mirrorless Camera, 20.9 MP with Z DX 16-50Mm F/3.5-6.3 VR & Z DX 50-250Mm F/4.5-6.3 VR Lens with Additional Battery & 64 GB SD Card",
+        "brand": "Nikon",
+        "price": "89,99",
+        "rating": "4.3",
+        "description": "20.9MP DX-Format CMOS Sensor and EXPEED 6 Image Processor",
+        "category": "Camera",
+        "image": ["C:/Users/Ashutosh/Downloads/img/camera1", "C:/Users/Ashutosh/Downloads/img/camera2", "C:/Users/Ashutosh/Downloads/img/camera3"]
+    },
+    {
+        "id": "10",
+        "title": "Sony Alpha ILCE 6100 24.2 MP Mirrorless Digital SLR Camera Body only | APS-C Sensor | Fast Auto Focus, Real-time Eye AF, Real-time Tracking | 4K Vlogging Camera - Black",
+        "brand": "Sony",
+        "price": "52,899",
+        "rating": "4",
+        "description": "APS-C size, 24.2-megapixel ExmorTM CMOS sensor",
+        "category": "Camera",
+        "image": ["C:/Users/Ashutosh/Downloads/img/camera11", "C:/Users/Ashutosh/Downloads/img/camera12", "C:/Users/Ashutosh/Downloads/img/camera13"]
+    },
+    
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "1",
+    "title": "Samsung Galaxy M05 (Mint Green, 4GB RAM, 64 GB Storage)",
+    "brand": "Samsung",
+    "price": 6249,
+    "rating": 4,
+    "description": "Captivating viewing experience on bigger 6.7\" Display with HD+ resolution (720*1600 Pixels)",
+    "category": "Mobile",
+    "image": ["/img/mob1.jpg", "/img/mob2.jpg", "/img/mob3.jpg"]
+  },
+  {
+    "id": "2",
+    "title": "Apple Macbook Retina Display 12",
+    "brand": "Apple",
+    "price": 50499,
+    "rating": 5,
+    "description": "Embodying the raw, wayward spirit of rock ‘n’ roll...",
+    "category": "Laptop",
+    "image": ["/img/lap1.jpg", "/img/lap2.jpg", "/img/lap3.jpg", "/img/lap4.jpg"]
+  },
+  {
+    "id": "3",
+    "title": "OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage)",
+    "brand": "OnePlus",
+    "price": 17599,
+    "rating": 4.1,
+    "description": "5500 mAh Battery & Reverse Charging...",
+    "category": "Mobile",
+    "image": ["/img/mob11.jpg", "/img/mob12.jpg", "/img/mob13.jpg"]
+  },
+  {
+    "id": "4",
+    "title": "HP 15, 13th Gen Intel Core i5-1335U Laptop",
+    "brand": "HP",
+    "price": 56990,
+    "rating": 3.5,
+    "description": "Processor, Memory & Storage: Intel Core i5-1334U...",
+    "category": "Laptop",
+    "image": ["/img/lap11.jpg", "/img/lap12.jpg", "/img/lap13.jpg"]
+  },
+  {
+    "id": "5",
+    "title": "TAGDO Men's Regular Fit Casual Shirt (5171)",
+    "brand": "TAGDO",
+    "price": 499,
+    "rating": 4,
+    "description": "Discover the epitome of effortless style...",
+    "category": "Shirt",
+    "image": ["/img/men1.jpg", "/img/men2.jpg", "/img/men3.jpg"]
+  },
+  {
+    "id": "6",
+    "title": "Noise Halo Plus 1.46\" Super AMOLED Display Elite Smart Watch",
+    "brand": "Noise",
+    "price": 4500,
+    "rating": 4.2,
+    "description": "1.46 inches AMOLED display, 466*466px, Always on display",
+    "category": "Watch",
+    "image": ["/img/watch1.jpg", "/img/watch2.jpg", "/img/watch3.jpg"]
+  },
+  {
+    "id": "7",
+    "title": "Symbol Premium Men's Cotton Stretch Jeans (Regular Fit)",
+    "brand": "Special",
+    "price": 1499,
+    "rating": 3.7,
+    "description": "Made from 98% cotton and 2% elastane for comfort stretch",
+    "category": "Jeans",
+    "image": ["/img/jeans1.jpg", "/img/jeans2.jpg", "/img/jeans3.jpg"]
+  },
+  {
+    "id": "8",
+    "title": "JVX Jeans for Men || Regular Fit || Stylish",
+    "brand": "JVX",
+    "price": 1899,
+    "rating": 4,
+    "description": "Fit: These jeans for men are designed with a trendy style...",
+    "category": "Jeans",
+    "image": ["/img/jeans11.jpg", "/img/jeans12.jpg", "/img/jeans13.jpg"]
+  },
+  {
+    "id": "9",
+    "title": "Nikon Z50 Mirrorless Camera, 20.9 MP with Lens & SD Card",
+    "brand": "Nikon",
+    "price": 8999,
+    "rating": 4.3,
+    "description": "20.9MP DX-Format CMOS Sensor and EXPEED 6 Image Processor",
+    "category": "Camera",
+    "image": ["/img/camera1.jpg", "/img/camera2.jpg", "/img/camera3.jpg"]
+  },
+  {
+    "id": "10",
+    "title": "Sony Alpha ILCE 6100 24.2 MP Mirrorless Digital Camera",
+    "brand": "Sony",
+    "price": 52899,
+    "rating": 4,
+    "description": "APS-C size, 24.2-megapixel Exmor CMOS sensor",
+    "category": "Camera",
+    "image": ["/img/camera11.jpg", "/img/camera12.jpg", "/img/camera13.jpg"]
+  }
+]
