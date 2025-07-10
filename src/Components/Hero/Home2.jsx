@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useContext, useEffect, useState } from 'react'
+// import axios from 'axios'
 import { Link } from 'react-router-dom'
+import {GlobalContext} from '../Context/GlobalContext'
 
 
 
-const Home2 = () => {
 
-    const [product, setProduct] = useState([])
-     const [sortOption, setSortOption] = useState('');
+const Home2 = ({children}) => {
 
-    useEffect(() => {
-        axios.get(`https://fakestoreapi.com/products`)
-            //  axios.get(`https://api.escuelajs.co/api/v1/products`)
-            .then(res => setProduct(res.data))
-            .catch(err => console.log("error: ", err));
-    }, [])
+    const {product} = useContext(GlobalContext);
+
+    // const [product, setProduct] = useState([])
+
+    // useEffect(() => {
+    //     axios.get(`https://fakestoreapi.com/products`)
+    //         //  axios.get(`https://api.escuelajs.co/api/v1/products`)
+    //         .then(res => setProduct(res.data))
+    //         .catch(err => console.log("error: ", err));
+    // }, [])
 
     // const sortedProduct = [...product].sort((a,b)=>{
     //     if (sortOption === "low-to-high") return a.price - b.price;

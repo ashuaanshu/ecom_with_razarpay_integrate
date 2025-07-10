@@ -1,21 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import axios from 'axios'
 import { FaEarthAfrica } from "react-icons/fa6";
 import { AiOutlineDeliveredProcedure } from "react-icons/ai";
 import { RiBillLine } from "react-icons/ri";
 import { CiCreditCard1 } from "react-icons/ci";
 import { IoMdAdd } from "react-icons/io";
 import { RiSubtractLine } from "react-icons/ri";
-import { GrMastercard } from 'react-icons/gr';
+import { GlobalContext, GlobalProvider } from './Context/GlobalContext';
 import Popup from './Popup';
 import Home2 from './Hero/Home2';
 
-const ProductDetail = () => {
+
+
+
+
+
+const ProductDetail = ({ children }) => {
+
+
     const { id } = useParams();
-    const [product, setProduct] = useState(null);
-    const [quan, setQuan] = useState(0)
-    const [showPopup, setShowpopup] =useState(false)
+    const [quan, setQuan] = useState(1)
+    const [showPopup, setShowpopup] = useState(false)
+
+    const { product: allProducts, AddToCart } = useContext(GlobalContext)
+    const product = allProducts.find((item) => item.id === parseInt(id))
+
+    if (!product) return <p>Loading....</p>;
+
 
     const increment = () => {
         setQuan(quan + 1)
@@ -27,16 +38,10 @@ const ProductDetail = () => {
         }
     };
 
-    const abc = ()=>{
+    const abc = () => {
         setShowpopup(true)
     }
 
-    useEffect(() => {
-        axios.get(`https://fakestoreapi.com/products/${id}`)
-            // axios.get(`https://api.escuelajs.co/api/v1/products`)
-            .then(res => setProduct(res.data))
-            .catch(err => console.log(err));
-    }, [id])
 
     if (!product) return <p>Loading....</p>;
     return (
@@ -47,7 +52,7 @@ const ProductDetail = () => {
                 </div>
 
                 <div>
-                    
+
                     <p className='text-2xl font-bold px-4 mb-4'>{product.title}</p>
                     <div className='flex justify-between px-5'>
                         <p className='font-bold'>Brand: .....   </p><p className='font-bold text-center text-md'>Rating: {product.rating.rate}⭐</p>
@@ -63,32 +68,14 @@ const ProductDetail = () => {
                         <button onClick={decrement} className='p-2 px-20 text-2xl rounded-lg'> <RiSubtractLine /> </button><span className='font-bold text-2xl my-1'> {quan} </span> <button onClick={increment} className=' p-1 px-20 rounded-md text-2xl'> <IoMdAdd /> </button>
                     </div>
                     <div className='flex gap-10 items-center justify-center p-5'>
-{showPopup && <Popup onClose={() => setShowpopup(false)} />}
-    
+                        {showPopup && <Popup onClose={() => setShowpopup(false)} />}
 
-                        <button className='border rounded-xl p-4 hover:cursor-pointer hover:scale-90 bg-blue-600 hover:bg-blue-700'> Add to Cart</button>
+
+                        <button className='border rounded-xl p-4 hover:cursor-pointer hover:scale-90 bg-blue-600 hover:bg-blue-700' onClick={()=>AddToCart(product)}> Add to Cart</button>
                         <button className='border rounded-xl p-4 px-7 hover:cursor-pointer hover:scale-90 bg-blue-600 hover:bg-blue-700' onClick={abc}>Order</button>
                     </div>
                     <hr />
                 </div>
-                {/* <div className="bg-gray-100 p-6 rounded-lg shadow-md text-sm font-medium leading-6 space-y-4 w-full max-w-xs"></div> */}
-                {/* <div className='bg-gray-200 p-10 gap-10 rounded-2xl space-y-4 flex'>
-
-                    <div className='text-2xl '>
-                        <p><FaEarthAfrica className='my-2' /></p>
-                        <p><AiOutlineDeliveredProcedure className='my-2' /></p>
-                        <p><RiBillLine className='my-2' /></p>
-                        <p><CiCreditCard1 /></p>
-
-                    </div>
-                    <div className='font-semibold '>
-                        <p>Shipping worldwide</p>
-                        <p>Free 7-day return if eligible, so easy</p>
-                        <p>Supplier give bills for this product.</p>
-                        <p>Pay online or when receiving goods </p>
-                    </div>
-
-                </div> */}
 
                 <div>
                     <div className='bg-gray-100 flex gap-20 p-2 mt-6 px-6'>
@@ -107,14 +94,14 @@ const ProductDetail = () => {
                         <p><CiCreditCard1 className=' text-2xl' /></p>
                         <p className='font-medium'>Pay online or when receiving goods</p>
                     </div>
-                    <hr  className='mt-5'/>
-                    
+                    <hr className='mt-5' />
+
                     <div className='flex gap-5'>
-                        <img src='/card.png'className='mt-5' />
-                        
-                    {/* <img src="/mastercard.png" className='h-20 mt-5 '/>
+                        <img src='/card.png' className='mt-5' />
+
+                        {/* <img src="/mastercard.png" className='h-20 mt-5 '/>
                     <img src="/visa.png" className='h-30' /> */}
-                </div>
+                    </div>
                 </div>
 
             </div>
