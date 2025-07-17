@@ -28,16 +28,16 @@ const Shop = () => {
 
       <div className="grid lg:grid-cols-4 ms:grid-cols-3 p-10">
         {sortedProduct.map((items) => (
-          <div key={items.id} className="shadow-2xl w-70 m-4">
-            <Link to={`/product/${items.id}`}>
+          <div key={items._id} className="shadow-2xl w-70 m-4">
+            <Link to={`/product/${items._id}`}>
               <div className="flex flex-col items-center relative group">
                 <div className="relative h-60 w-50">
                   <img
-                    src={items.image}
+                    src={items.images[0]}
                     className="h-full pt-5 w-full object-contain absolute top-0 left-0 transition-all duration-500 ease-in-out group-hover:-translate-y-2 group-hover:opacity-0"
                   />
                   <img
-                    src={items.image}
+                    src={items.images[1]}
                     alt="hovered"
                     className="h-full w-full object-contain absolute top-0 left-0 transition-all duration-1000 ease-in-out opacity-0 group-hover:opacity-100 group-hover:translate-y-0"
                   />

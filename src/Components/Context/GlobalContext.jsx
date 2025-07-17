@@ -8,7 +8,7 @@ export const GlobalProvider = ({ children }) => {
     const [cartt, setCartt] = useState([])
 
     useEffect(() => {
-        axios.get(`https://fakestoreapi.com/products`)
+        axios.get(`http://localhost:8000/api/products/all`)
             .then(res => setProduct(res.data))
             .catch(err => console.log("error: ", err));
     }, [])

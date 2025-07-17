@@ -1,94 +1,138 @@
-import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { UserRound, Mail, Smartphone, Lock, CalendarCheck } from 'lucide-react';
 
 const Signup = () => {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [repeatPassword, setRepeatPassword] = useState("")
-    const [name, setName] = useState("")
-    const [mobile, setMobile]= useState("")
-    const [age, setAge] =useState("")
-    const [check, setCheckbox]= useState(false)
-    
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [mobile, setMobile] = useState('');
+  const [age, setAge] = useState('');
+  const [password, setPassword] = useState('');
+  const [repeatPassword, setRepeatPassword] = useState('');
+  const [check, setCheckbox] = useState(false);
 
-    return (
-        <div className='min-h-screen bg-gray-300 flex justify-center '  style={{
-            backgroundImage:"url('/abc.jpg')"
-        }}>
-            <div className='flex items-center'>
-                <form action="" className='shadow-2xl p-8 border-2 opacity-50 hover:opacity-100 bg-amber-200'>
-                    <h1 className='font-bold text-2xl text-center p-8'>Sign Up</h1>
+  const [nameError, setNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [mobileError, setMobileError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [repeatPasswordError, setRepeatPasswordError] = useState('');
 
-                    <div className='pb-4 font-semibold text-lg'>
-                        <label>Name:</label>
-                        <input type='text'
-                        placeholder='Enter Name'
-                        value={name}
-                        onChange={(e)=>setName(e.target.value)}
-                        className='border-1 w-full mt-2' />
-                    </div>
+  const navigate = useNavigate();
 
-                    <div className='pb-4 font-semibold text-lg'>
-                        <label>Email:</label>
-                        <input type='text'
-                        placeholder='Enter Email'
-                        value={email}
-                        onChange={(e)=>setEmail(e.target.value)} 
-                        className='border-1 w-full mt-2'/>
-                    </div>
+  useEffect(() => {
+    setNameError(name && name.trim().length < 2 ? 'Name must be at least 2 characters' : '');
+  }, [name]);
 
-                    <div className='pb-4 font-semibold text-lg'>
-                        <label>Age:</label>
-                        <input type='number'
-                        placeholder='Enter Age'
-                        value={age}
-                        onChange={(e)=>setAge(e.target.value)} 
-                        className='border-1 w-full mt-2'/>
-                    </div>
+  useEffect(() => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setEmailError(email && !regex.test(email) ? 'Invalid email format' : '');
+  }, [email]);
 
-                    <div className='pb-4 font-semibold text-lg'>
-                        <label>Mobile:</label>
-                        <input type='number'
-                        placeholder='Enter Mobile number'
-                        value={mobile}
-                        onChange={(e)=>setMobile(e.target.value)}
-                        className='border-1 w-full mt-2' />
-                    </div >
+  useEffect(() => {
+    setMobileError(mobile && mobile.length !== 10 ? 'Mobile number must be 10 digits' : '');
+  }, [mobile]);
 
-                    <div className='pb-4 font-semibold text-lg'>
-                        <label>Password:</label>
-                        <input type='password'
-                        placeholder='Enter Password'
-                        value={password}
-                        onChange={(e)=>setPassword(e.target.value)}
-                        className='border-1 w-full mt-2' />
-                    </div>
+  useEffect(() => {
+    const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&^_-])[A-Za-z\d@$!%*#?&^_-]{6,}$/;
+    setPasswordError(password && !regex.test(password)
+      ? 'Password must contain letter, number, special char, and be 6+ characters'
+      : '');
+  }, [password]);
 
-                    <div className='pb-4 font-semibold text-lg'>
-                        <label>Again Password:</label>
-                        <input type='password'
-                        placeholder='Enter Repeat Password'
-                        value={repeatPassword}
-                        onChange={(e)=>setRepeatPassword(e.target.value)} 
-                        className='border-1 w-full mt-2'/>
-                    </div>
+  useEffect(() => {
+    setRepeatPasswordError(repeatPassword && repeatPassword !== password
+      ? 'Passwords do not match'
+      : '');
+  }, [repeatPassword, password]);
 
-                    <div className='pb-4 font-semibold text-lg'>
-                         <input
-                                type='checkbox'
-                                value={check}
-                                onChange={(e)=>setCheckbox(e.target.checked)}
-                                required /> I am agree Term & Condition
-                                <p className='text-blue-600 font-medium text-center mt-4'><Link to='/login'>Login</Link></p>
-                    </div>
-                    <div className='flex justify-center mt-1'>
-                        <button className=' w-full border-1 bg-blue-400 font-semibold text-xl active:scale-90 rounded text-white'>Signup</button>
-                    </div>
-                </form>
-            </div>
+  const signupHandler = async (e) => {
+    e.preventDefault();
 
+    if (nameError || emailError || mobileError || passwordError || repeatPasswordError) return;
+
+    if (!check) {
+      alert('Please accept Terms and Conditions');
+      return;
+    }
+
+    try {
+      const res = await axios.post('http://localhost:8000/user/signup', {
+        email, password, name, mobile, age,
+      });
+      if (res.data.user) {
+        alert('Signup Successful');
+        navigate('/login');
+      }
+    } catch (error) {
+      alert('Email already exists');
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center" style={{
+      backgroundImage: "url('/abc.jpg')",
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}>
+      <div className="w-full max-w-md bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-xl px-8 py-10">
+        <div className="flex justify-center mb-6">
+          <div className="bg-gradient-to-tr from-purple-500 to-blue-500 rounded-full p-4">
+            <UserRound size={40} color="white" />
+          </div>
         </div>
-    )
-}
 
-export default Signup
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">Create Account</h2>
+        <p className="text-center text-gray-600 mb-6">Join us by creating your profile</p>
+
+        <form onSubmit={signupHandler} className="space-y-4">
+          <Field icon={<UserRound size={18} />} value={name} onChange={setName} placeholder="Enter your name" label="Name" error={nameError} />
+          <Field icon={<Mail size={18} />} value={email} onChange={setEmail} placeholder="Enter your email" label="Email" error={emailError} />
+          <Field icon={<Smartphone size={18} />} value={mobile} onChange={setMobile} placeholder="Enter mobile number" label="Mobile" error={mobileError} type="number" />
+          <Field icon={<CalendarCheck size={18} />} value={age} onChange={setAge} placeholder="Enter age" label="Age" type="number" />
+          <Field icon={<Lock size={18} />} value={password} onChange={setPassword} placeholder="Create password" label="Password" error={passwordError} type="password" />
+          <Field icon={<Lock size={18} />} value={repeatPassword} onChange={setRepeatPassword} placeholder="Repeat password" label="Repeat Password" error={repeatPasswordError} type="password" />
+
+          <div className="flex items-center gap-2 text-sm mt-1 text-gray-700">
+            <input type="checkbox" checked={check} onChange={(e) => setCheckbox(e.target.checked)} />
+            <label>I agree to the <span className="text-blue-600 font-semibold">Terms & Conditions</span></label>
+          </div>
+
+          <button
+            type="submit"
+            disabled={nameError || emailError || mobileError || passwordError || repeatPasswordError}
+            className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold py-2 rounded-md hover:from-indigo-600 hover:to-purple-600 active:scale-95 transition"
+          >
+            Sign Up
+          </button>
+
+          <p className="text-sm text-center text-gray-600 mt-4">
+            Already have an account?{' '}
+            <Link to="/login" className="text-blue-600 hover:underline font-medium">
+              Login
+            </Link>
+          </p>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+const Field = ({ icon, value, onChange, placeholder, label, error, type = 'text' }) => (
+  <div>
+    <label className="text-sm font-medium text-gray-700">{label}</label>
+    <div className="flex items-center mt-1 border rounded-md px-3 py-2 bg-white shadow-sm">
+      <span className="text-gray-400 mr-2">{icon}</span>
+      <input
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        className="w-full outline-none text-sm"
+      />
+    </div>
+    {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+  </div>
+);
+
+export default Signup;

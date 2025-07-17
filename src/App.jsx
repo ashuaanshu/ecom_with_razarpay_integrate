@@ -10,9 +10,12 @@ import Hero from './Components/Hero/Hero';
 import Strip from './Components/Hero/Strip';
 import './App.css';
 import Contactus from './Components/Contact/Contactus';
-import {GlobalProvider} from './Components/Context/GlobalContext';
+import { GlobalProvider } from './Components/Context/GlobalContext';
 import Cart from './Components/Cart';
 import Signup from './Components/Auth/Signup';
+import Profile from './Components/Navbar/Profile';
+import YourOrder from './Components/YourOrder';
+import OrderDetails from './OrderDetail';
 // import { CartProvider } from './Components/Context/Contextapi';
 
 const App = () => {
@@ -28,6 +31,7 @@ const App = () => {
               <h1 className='text-center text-2xl font-bold'>--- Product ---</h1>
               <Home2 />
             </>
+
           } />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
@@ -35,6 +39,10 @@ const App = () => {
           <Route path='/product/:id' element={<ProductDetail />} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/order' element={<YourOrder />} />
+          <Route path='/orderdetail' element={<OrderDetails />} />
+
         </Routes>
         <Footer />
       </Router>

@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 const Cart = () => {
 
   const { id } = useParams();
+  
   const [showPopup, setShowpopup] = useState(false)
 
   const abc = () => {
@@ -31,7 +32,7 @@ const Cart = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {cartt.map((product, index) => (
           <div key={index} className="border shadow p-4 rounded hover:shadow-xl">
-            <img src={product.image} alt={product.title} className="h-48 object-contain mx-auto" />
+            <img src={product.images[0]} alt={product.title} className="h-48 object-contain mx-auto" />
             <h2 className="text-lg font-semibold mt-2">{product.title}</h2>
             <p className="text-gray-600">₹ {product.price}</p>
           </div>
